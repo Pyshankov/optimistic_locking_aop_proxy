@@ -2,6 +2,7 @@ package com.pavel.marchenko.optimistic.locking.repository;
 
 
 
+import com.pavel.marchenko.optimistic.locking.domain.OptimisticLockingHandler;
 import com.pavel.marchenko.optimistic.locking.entity.Car;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -13,7 +14,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface CarRepository  extends CrudRepository<Car,Long> {
 
    Car findByModel(String model);
-
+   @OptimisticLockingHandler
    Car save(Car car);
 }
 
