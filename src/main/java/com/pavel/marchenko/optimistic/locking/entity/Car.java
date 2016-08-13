@@ -16,7 +16,7 @@ public class Car extends AbstractOptimisticLockEntity<Long> {
     private String model;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.ALL} )
+    @OneToMany(cascade = {CascadeType.ALL},fetch = FetchType.EAGER )
 //    @OneToMany
     @JoinColumn(name="car_id")
     private List<Item> items;

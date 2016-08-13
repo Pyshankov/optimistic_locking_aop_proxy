@@ -13,6 +13,4 @@ public interface OptimisticLockEntity<ID> extends Serializable {
 
     void setVersion(Integer version);
 
-    Integer getLastVisibleVersion();
-
 }

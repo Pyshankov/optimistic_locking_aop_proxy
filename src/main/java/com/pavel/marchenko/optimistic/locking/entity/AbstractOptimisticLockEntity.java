@@ -18,20 +18,8 @@ public abstract class AbstractOptimisticLockEntity<ID> implements OptimisticLock
     @Version
     protected Integer version;
 
-    @Transient
-    protected Integer lastVisibleVersion;
-
-    @PostLoad
-    private void postLoad(){
-        lastVisibleVersion=this.version;
-    }
-
     public Integer getVersion() {
         return version;
-    }
-
-    public Integer getLastVisibleVersion() {
-        return lastVisibleVersion;
     }
 
     @Override
@@ -42,10 +30,6 @@ public abstract class AbstractOptimisticLockEntity<ID> implements OptimisticLock
     @Override
     public void setVersion(Integer version) {
         this.version = version;
-    }
-
-    public void setLastVisibleVersion(Integer lastVisibleVersion) {
-        this.lastVisibleVersion = lastVisibleVersion;
     }
 
     public ID getId() {
