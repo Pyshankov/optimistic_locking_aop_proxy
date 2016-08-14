@@ -1,7 +1,7 @@
 package com.pavel.marchenko.optimistic.locking;
 
-import com.pavel.marchenko.optimistic.locking.entity.Car;
-import com.pavel.marchenko.optimistic.locking.entity.Item;
+import com.pavel.marchenko.optimistic.locking.domain.entity.Car;
+import com.pavel.marchenko.optimistic.locking.domain.entity.Item;
 import com.pavel.marchenko.optimistic.locking.repository.OptimisticLockRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;

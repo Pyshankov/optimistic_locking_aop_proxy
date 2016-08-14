@@ -1,4 +1,4 @@
-package com.pavel.marchenko.optimistic.locking.entity;
+package com.pavel.marchenko.optimistic.locking.domain.entity;
 
 import javax.persistence.Entity;
 

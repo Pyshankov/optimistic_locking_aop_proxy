@@ -1,7 +1,7 @@
 package com.pavel.marchenko.optimistic.locking.repository;
 
 import com.pavel.marchenko.optimistic.locking.domain.OptimisticLockingHandler;
-import com.pavel.marchenko.optimistic.locking.entity.OptimisticLockEntity;
+import com.pavel.marchenko.optimistic.locking.domain.entity.OptimisticLockEntity;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import java.io.Serializable;

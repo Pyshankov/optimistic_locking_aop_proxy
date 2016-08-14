@@ -1,6 +1,6 @@
 package com.pavel.marchenko.optimistic.locking.repository;
 
-import com.pavel.marchenko.optimistic.locking.entity.Car;
+import com.pavel.marchenko.optimistic.locking.domain.entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -2,7 +2,7 @@ package com.pavel.marchenko.optimistic.locking.repository;
 
 
 import com.pavel.marchenko.optimistic.locking.domain.OptimisticLockingHandler;
-import com.pavel.marchenko.optimistic.locking.entity.Item;
+import com.pavel.marchenko.optimistic.locking.domain.entity.Item;
 import org.springframework.data.repository.CrudRepository;
 
 /**

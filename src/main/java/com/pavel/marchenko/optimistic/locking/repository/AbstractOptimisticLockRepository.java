@@ -1,6 +1,6 @@
 package com.pavel.marchenko.optimistic.locking.repository;
 
-import com.pavel.marchenko.optimistic.locking.entity.OptimisticLockEntity;
+import com.pavel.marchenko.optimistic.locking.domain.entity.OptimisticLockEntity;
 import com.pavel.marchenko.optimistic.locking.exception.OptimisticLockException;
 import org.springframework.data.repository.NoRepositoryBean;
 

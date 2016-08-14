@@ -1,7 +1,6 @@
-package com.pavel.marchenko.optimistic.locking.entity;
+package com.pavel.marchenko.optimistic.locking.domain.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 /**
  * Created by pyshankov on 05.07.16.
