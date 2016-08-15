@@ -22,15 +22,6 @@ public abstract class AbstractOptimisticLockEntity<ID> implements OptimisticLock
     }
 
     @Override
-    public ID getEntityId() {
-        return id;
-    }
-
-    @Override
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
     public ID getId() {
         return id;
     }

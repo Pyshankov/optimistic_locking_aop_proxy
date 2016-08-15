@@ -56,7 +56,7 @@ public class OptimisticLockRepositoryInvocationHandler implements MethodIntercep
                         txManager.rollback(status);
                         System.out.println("some optimistic lock trouble!");
                         Object old = objects[0];
-                        objects[0] = repository.findOne(((OptimisticLockEntity<Long>)objects[0]).getEntityId());
+                        objects[0] = repository.findOne(((OptimisticLockEntity<Long>)objects[0]).getId());
                         prePersist(objects[0],old);
                         continue persist;
                     }
@@ -75,16 +75,16 @@ public class OptimisticLockRepositoryInvocationHandler implements MethodIntercep
 
     private void checkVersion(Object o){
         OptimisticLockEntity<Long> entity = (OptimisticLockEntity<Long>) o;
-        if(entity.getEntityId()==null)
+        if(entity.getId()==null)
             return ;
-        OptimisticLockEntity<Long> lockEntity = repository.findOne(entity.getEntityId());
+        OptimisticLockEntity<Long> lockEntity = repository.findOne(entity.getId());
         if(!entity.getVersion().equals(lockEntity.getVersion()))
             throw new OptimisticLockException("entity have been previously updated!");
     }
 
     private void prePersist(Object s,Object from) {
         OptimisticLockEntity<Long> entity = (OptimisticLockEntity<Long>) s;
-        if(entity.getVersion()==null || entity.getEntityId()==null ) return;
+        if(entity.getVersion()==null || entity.getId()==null ) return;
         Field[] fields = s.getClass().getDeclaredFields();
         for (Field f : fields ){
             f.setAccessible(true);

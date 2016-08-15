@@ -7,10 +7,8 @@ import java.io.Serializable;
  */
 public interface OptimisticLockEntity<ID> extends Serializable {
 
-    ID getEntityId();
+    ID getId();
 
     Integer getVersion();
-
-    void setVersion(Integer version);
 
 }

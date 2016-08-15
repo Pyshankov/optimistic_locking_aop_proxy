@@ -29,12 +29,20 @@ public class OptimisticLockRepositoryBeanPostProcessor implements BeanPostProces
     @Override
     public Object postProcessAfterInitialization(Object o, String s) throws BeansException {
 
-        if(o instanceof ItemRepository || o instanceof CarRepository){
+        if( o instanceof CarRepository){
             System.out.println(o.getClass());
-//           o =  Enhancer.create(
-//                    CrudRepository.class,
-//                    new OptimisticLockRepositoryInvocationHandler((CrudRepository<? extends OptimisticLockEntity<Long>, Long>) o,txManager)
-//            );
+           o =  Enhancer.create(
+                    CarRepository.class,
+                    new OptimisticLockRepositoryInvocationHandler((CarRepository) o,txManager)
+            );
+            System.out.println(o);
+        }
+        if( o instanceof ItemRepository){
+            System.out.println(o.getClass());
+            o =  Enhancer.create(
+                    ItemRepository.class,
+                    new OptimisticLockRepositoryInvocationHandler((ItemRepository) o,txManager)
+            );
             System.out.println(o);
         }
 
